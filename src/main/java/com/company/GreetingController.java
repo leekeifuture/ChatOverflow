@@ -21,5 +21,4 @@ public class GreetingController {
         model.put("some", "Main page");
         return "main";
     }
-
 }
