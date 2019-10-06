@@ -10,8 +10,17 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String text;
     private String tag;
+
+    public Message() {
+    }
+
+    public Message(String text, String tag) {
+        this.text = text;
+        this.tag = tag;
+    }
 
     public Integer getId() {
         return id;
