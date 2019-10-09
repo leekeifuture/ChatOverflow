@@ -39,7 +39,7 @@ public class MainController {
             @RequestParam String tag,
             Map<String, Object> model
     ) {
-        Message message = new Message(text, tag);
+        Message message = new Message(text, tag, user);
         iMessageRepo.save(message);
 
         Iterable<Message> messages = iMessageRepo.findAll();
