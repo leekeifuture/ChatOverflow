@@ -19,7 +19,8 @@ public class RegistrationController {
     private IUserRepo iUserRepo;
 
     @GetMapping("/registration")
-    public String registration() {
+    public String registration(Map<String, Object> model) {
+        model.put("message", "");
         return "registration";
     }
 
@@ -28,7 +29,7 @@ public class RegistrationController {
         User userFromDb = iUserRepo.findByUsername(user.getUsername());
 
         if (userFromDb != null) {
-            model.put("message", "User exists!");
+            model.put("message", "<span>User exists!</span>");
             return "registration";
         }
 
