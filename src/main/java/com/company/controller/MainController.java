@@ -28,8 +28,8 @@ public class MainController {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping
-    public String greeting(Map<String, Object> model) {
+    @GetMapping("/")
+    public String greeting() {
         return "greeting";
     }
 
