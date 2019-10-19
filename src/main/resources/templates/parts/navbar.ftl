@@ -1,5 +1,5 @@
-<#include "security.ftl">
-<#import "login.ftl" as l>
+<#include "security.ftl" />
+<#import "login.ftl" as l />
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">ChatOverflow</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -28,6 +28,6 @@
             </#if>
         </ul>
         <div class="navbar-text mr-3">${name}</div>
-        <@l.logout/>
+        <@l.logout />
     </div>
 </nav>

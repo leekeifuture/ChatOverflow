@@ -31,7 +31,7 @@ public class UserController {
         return "userList";
     }
 
-    @GetMapping("{user}")
+    @GetMapping("/{user}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String userEditForm(@PathVariable User user, Model model) {
         model.addAttribute("user", user);
@@ -50,7 +50,7 @@ public class UserController {
         return "redirect:/user";
     }
 
-    @GetMapping("profile")
+    @GetMapping("/profile")
     public String getProfile(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("username", user.getUsername());
         model.addAttribute("email", user.getEmail());
@@ -58,7 +58,7 @@ public class UserController {
         return "profile";
     }
 
-    @PostMapping("profile")
+    @PostMapping("/profile")
     public String updateProfile(
             @AuthenticationPrincipal User user,
             @RequestParam String email, String password
