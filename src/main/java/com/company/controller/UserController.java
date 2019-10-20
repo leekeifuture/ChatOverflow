@@ -28,6 +28,7 @@ public class UserController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String userList(Model model) {
         model.addAttribute("users", userService.findAll());
+
         return "userList";
     }
 
@@ -36,13 +37,15 @@ public class UserController {
     public String userEditForm(@PathVariable User user, Model model) {
         model.addAttribute("user", user);
         model.addAttribute("roles", Role.values());
+
         return "userEdit";
     }
 
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
     public String userSave(
-            @RequestParam String username, Map<String, String> form,
+            @RequestParam String username,
+            @RequestParam Map<String, String> form,
             @RequestParam("userId") User user
     ) {
         userService.saveUser(user, username, form);
@@ -61,9 +64,10 @@ public class UserController {
     @PostMapping("/profile")
     public String updateProfile(
             @AuthenticationPrincipal User user,
-            @RequestParam String email, String password
+            @RequestParam String password,
+            @RequestParam String email
     ) {
-        userService.updateProfile(user, email, password);
+        userService.updateProfile(user, password, email);
 
         return "redirect:/user/profile";
     }

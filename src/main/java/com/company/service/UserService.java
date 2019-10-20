@@ -67,7 +67,7 @@ public class UserService implements UserDetailsService {
                     user.getUsername(),
                     user.getActivationCode());
 
-            mailSender.send(user.getEmail(), "Activation", message);
+            mailSender.send(user.getEmail(), "Activation code", message);
         }
     }
 
@@ -81,7 +81,7 @@ public class UserService implements UserDetailsService {
 
         iUserRepo.save(user);
 
-        return false;
+        return true;
     }
 
     public List<User> findAll() {
@@ -105,7 +105,7 @@ public class UserService implements UserDetailsService {
         iUserRepo.save(user);
     }
 
-    public void updateProfile(User user, String email, String password) {
+    public void updateProfile(User user, String password, String email) {
         String userEmail = user.getEmail();
 
         boolean isEmailChanged = (email != null && !email.equals(userEmail)) ||

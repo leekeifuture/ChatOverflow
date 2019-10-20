@@ -56,6 +56,16 @@
                     </#if>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="g-recaptcha"
+                     data-sitekey="6Lfacr4UAAAAANu20l2VzAB89L3_x6kkcV8vxUXN">
+                </div>
+                <#if captchaError??>
+                    <div class="alert alert-danger" role="alert">
+                        ${captchaError}
+                    </div>
+                </#if>
+            </div>
         </#if>
         <button class="btn btn-primary" type="submit">
             <#if isRegisterForm>

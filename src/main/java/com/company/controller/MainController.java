@@ -50,6 +50,7 @@ public class MainController {
 
         model.addAttribute("messages", messages);
         model.addAttribute("filter", filter);
+
         return "main";
     }
 
@@ -77,8 +78,8 @@ public class MainController {
                     uploadDir.mkdir();
                 }
 
-                String uudiFile = UUID.randomUUID().toString();
-                String resultFilename = uudiFile + "." + file.getOriginalFilename();
+                String uuidFile = UUID.randomUUID().toString();
+                String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
                 file.transferTo(
                         new File(uploadPath + "/" + resultFilename));
@@ -94,7 +95,7 @@ public class MainController {
         Iterable<Message> messages = iMessageRepo.findAll();
 
         model.addAttribute("messages", messages);
-        model.addAttribute("filter", "");
+
         return "main";
     }
 }
