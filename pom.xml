@@ -59,6 +59,24 @@
             <artifactId>spring-session-jdbc</artifactId>
             <groupId>org.springframework.session</groupId>
         </dependency>
+
+        <!-- JAXB -->
+
+        <dependency>
+            <artifactId>jaxb-api</artifactId>
+            <groupId>javax.xml.bind</groupId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>jaxb-core</artifactId>
+            <groupId>com.sun.xml.bind</groupId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>jaxb-impl</artifactId>
+            <groupId>com.sun.xml.bind</groupId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
