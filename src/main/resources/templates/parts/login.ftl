@@ -56,7 +56,7 @@
                     </#if>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="form-group row">
                 <div class="g-recaptcha"
                      data-sitekey="6Lfacr4UAAAAANu20l2VzAB89L3_x6kkcV8vxUXN">
                 </div>
@@ -74,22 +74,9 @@
                 Sign In
             </#if>
         </button>
+        <#if !isRegisterForm>
+            <a class="btn btn-primary" href="/registration">Register</a>
+        </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
     </form>
-    <#if !isRegisterForm>
-        <form action="/registration">
-            <button class="btn btn-primary mt-1">Register</button>
-        </form>
-    </#if>
-</#macro>
-
-<#macro logout>
-    <#if know>
-        <form action="/logout" method="post">
-            <button class="btn btn-primary" type="submit">Sign Out</button>
-            <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        </form>
-    <#else>
-
-    </#if>
 </#macro>

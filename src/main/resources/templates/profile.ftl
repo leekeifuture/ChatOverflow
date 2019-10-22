@@ -13,7 +13,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">E-mail:</label>
             <div class="col-sm-6">
-                <input type="email" name="email" class="form-control"
+                <input class="form-control" type="email" name="email"
                        placeholder="E-mail" value="${email!''}" />
             </div>
         </div>

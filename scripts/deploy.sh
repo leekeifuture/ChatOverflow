@@ -1,7 +1,5 @@
 #!usr/bin/env/ bash
 
-script deploy-log.txt
-
 echo 'mvn clean package'
 
 mvn clean package
@@ -12,9 +10,9 @@ scp -vi $KEY_PATH $JAR_LOCAL_PATH $SERV_IP:$JAR_SERV_PATH
 
 echo 'Restarting server...'
 
-ssh -vi $KEY_PATH $SERV_IP <<EOF
+ssh -vi $KEY_PATH $SERV_IP << EOF
 
-pgrep java | xargs kill -9
+pgrep java | xargs kill -9;
 nohup java -jar $JAR_SERV_PATH >> $PROJECT_PATH/log.txt &
 
 EOF

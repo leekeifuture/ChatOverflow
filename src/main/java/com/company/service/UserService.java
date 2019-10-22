@@ -37,7 +37,8 @@ public class UserService implements UserDetailsService {
     private String hostname;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username)
+            throws UsernameNotFoundException {
         User user = iUserRepo.findByUsername(username);
 
         if (user == null)
@@ -110,7 +111,7 @@ public class UserService implements UserDetailsService {
         iUserRepo.save(user);
     }
 
-    public void updateProfile(User user, String password, String email) {
+    public void updateProfile(User user, String email, String password) {
         String userEmail = user.getEmail();
 
         boolean isEmailChanged = (email != null && !email.equals(userEmail)) ||
@@ -119,18 +120,28 @@ public class UserService implements UserDetailsService {
         if (isEmailChanged) {
             user.setEmail(email);
 
-            if (!StringUtils.isEmpty(email)) {
+            if (!StringUtils.isEmpty(email))
                 user.setActivationCode(UUID.randomUUID().toString());
-            }
         }
 
-        if (!StringUtils.isEmpty(password)) {
+        if (!StringUtils.isEmpty(password))
             user.setPassword(password);
-        }
 
         iUserRepo.save(user);
 
         if (isEmailChanged)
             sendMessage(user);
+    }
+
+    public void subscribe(User currentUser, User user) {
+        user.getSubscribers().add(currentUser);
+
+        iUserRepo.save(user);
+    }
+
+    public void unsubscribe(User currentUser, User user) {
+        user.getSubscribers().remove(currentUser);
+
+        iUserRepo.save(user);
     }
 }

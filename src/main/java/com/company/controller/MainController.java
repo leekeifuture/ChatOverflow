@@ -3,9 +3,9 @@ package com.company.controller;
 import com.company.domain.Message;
 import com.company.domain.User;
 import com.company.repos.IMessageRepo;
+import com.company.service.CommonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -28,8 +26,8 @@ public class MainController {
     @Autowired
     private IMessageRepo iMessageRepo;
 
-    @Value("${upload.path}")
-    private String uploadPath;
+    @Autowired
+    private CommonService commonService;
 
     @GetMapping("/")
     public String greeting() {
@@ -59,8 +57,8 @@ public class MainController {
             @AuthenticationPrincipal User user,
             @Valid Message message,
             BindingResult bindingResult,
-            Model model,
-            @RequestParam("file") MultipartFile file
+            @RequestParam("file") MultipartFile file,
+            Model model
     ) throws IOException {
         message.setAuthor(user);
 
@@ -71,21 +69,7 @@ public class MainController {
             model.addAttribute("message", message);
         } else {
 
-            if (file != null && !file.getOriginalFilename().isEmpty()) {
-                File uploadDir = new File(uploadPath);
-
-                if (!uploadDir.exists()) {
-                    uploadDir.mkdir();
-                }
-
-                String uuidFile = UUID.randomUUID().toString();
-                String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-                file.transferTo(
-                        new File(uploadPath + "/" + resultFilename));
-
-                message.setFilename(resultFilename);
-            }
+            commonService.safeFile(message, file);
 
             model.addAttribute("message", null);
 
