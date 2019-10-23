@@ -53,9 +53,8 @@ public class RegistrationController {
                 Collections.emptyList(),
                 CaptchaResponseDto.class);
 
-        if (!response.isSuccess()) {
+        if (!response.isSuccess())
             model.addAttribute("captchaError", "Fill captcha");
-        }
 
         boolean isConfirmEmpty = StringUtils.isEmpty(passwordConfirm);
 
@@ -68,21 +67,22 @@ public class RegistrationController {
             model.addAttribute("passwordError",
                     "Passwords are different!");
 
+        final String template;
+
         if (isConfirmEmpty || bindingResult.hasErrors() || !response.isSuccess()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
 
             model.mergeAttributes(errors);
 
-            return "registration";
-        }
-
-        if (!userService.addUser(user)) {
+            template = "registration";
+        } else if (!userService.addUser(user)) {
             model.addAttribute("usernameError", "User exists!");
 
-            return "registration";
-        }
+            template = "registration";
+        } else
+            template = "redirect:/login";
 
-        return "redirect:/login";
+        return template;
     }
 
     @GetMapping("/activate/{code}")

@@ -34,7 +34,7 @@ public class Message {
     }
 
     public Message(String text, String tag, User user) {
-        author = user;
+        this.author = user;
         this.text = text;
         this.tag = tag;
     }

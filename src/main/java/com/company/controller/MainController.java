@@ -39,7 +39,7 @@ public class MainController {
             @RequestParam(required = false, defaultValue = "") String filter,
             Model model
     ) {
-        Iterable<Message> messages = iMessageRepo.findAll();
+        Iterable<Message> messages;
 
         if (filter != null && !filter.isEmpty())
             messages = iMessageRepo.findByTag(filter);

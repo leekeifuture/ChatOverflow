@@ -50,19 +50,24 @@ public class UserService implements UserDetailsService {
     public boolean addUser(User user) {
         User userFromDb = iUserRepo.findByUsername(user.getUsername());
 
+        final boolean addUserResult;
+
         if (userFromDb != null)
-            return false;
+            addUserResult = false;
+        else {
+            user.setActive(true);
+            user.setRoles(Collections.singleton(Role.USER));
+            user.setActivationCode(UUID.randomUUID().toString());
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        user.setActive(true);
-        user.setRoles(Collections.singleton(Role.USER));
-        user.setActivationCode(UUID.randomUUID().toString());
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+            iUserRepo.save(user);
 
-        iUserRepo.save(user);
+            sendMessage(user);
 
-        sendMessage(user);
+            addUserResult = true;
+        }
 
-        return true;
+        return addUserResult;
     }
 
     private void sendMessage(User user) {
@@ -80,14 +85,19 @@ public class UserService implements UserDetailsService {
     public boolean activateUser(String code) {
         User user = iUserRepo.findByActivationCode(code);
 
+        final boolean activateUserResult;
+
         if (user == null)
-            return false;
+            activateUserResult = false;
+        else {
+            user.setActivationCode(null);
 
-        user.setActivationCode(null);
+            iUserRepo.save(user);
 
-        iUserRepo.save(user);
+            activateUserResult = true;
+        }
 
-        return true;
+        return activateUserResult;
     }
 
     public List<User> findAll() {

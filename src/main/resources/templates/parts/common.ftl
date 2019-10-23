@@ -2,19 +2,19 @@
     <!DOCTYPE HTML>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>ChatOverflow</title>
         <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="stylesheet"
               href="/static/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/static/style.css">
+              crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
         <script src="/static/api.js"></script>
     </head>
     <body>
-    <#include "navbar.ftl">
+    <#include "navbar.ftl" />
     <div class="container mt-5">
         <#nested>
     </div>
