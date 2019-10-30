@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c />
 <@c.page>
     <h1 class="mb-1">${username}</h1>
-    <h5 style="color: red;">${message?ifExists}</h5>
+    <h5>${message?ifExists}</h5>
     <form method="post">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password:</label>

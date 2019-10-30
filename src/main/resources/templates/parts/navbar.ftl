@@ -33,8 +33,10 @@
         </ul>
         <#if user??>
             <form action="/logout" method="post">
-                <div class="navbar-text mr-3">${name}</div>
-                <button class="btn btn-primary" type="submit">Sign Out</button>
+                <div class="navbar-text mr-3">
+                    <a href="/user-messages/${userId}">${name}</a>
+                </div>
+                <button class="btn btn-danger" type="submit">Sign Out</button>
                 <input type="hidden" name="_csrf" value="${_csrf.token}" />
             </form>
         <#else>

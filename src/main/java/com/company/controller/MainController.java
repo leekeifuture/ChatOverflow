@@ -4,6 +4,7 @@ import com.company.domain.Message;
 import com.company.domain.User;
 import com.company.repos.IMessageRepo;
 import com.company.service.CommonService;
+import com.company.service.MessageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -29,6 +30,9 @@ public class MainController {
     @Autowired
     private CommonService commonService;
 
+    @Autowired
+    private MessageService messageService;
+
     @GetMapping("/")
     public String greeting() {
         return "greeting";
@@ -36,24 +40,17 @@ public class MainController {
 
     @GetMapping("/main")
     public String main(
+            @RequestParam(required = false, defaultValue = "1") String page,
             @RequestParam(required = false, defaultValue = "") String filter,
             Model model
     ) {
-        Iterable<Message> messages;
-
-        if (filter != null && !filter.isEmpty())
-            messages = iMessageRepo.findByTag(filter);
-        else
-            messages = iMessageRepo.findAll();
-
-        model.addAttribute("messages", messages);
-        model.addAttribute("filter", filter);
-
-        return "main";
+        return messageService.fillModel(page, filter, model);
     }
 
     @PostMapping("/main")
     public String add(
+            @RequestParam(required = false, defaultValue = "1") String page,
+            @RequestParam(required = false, defaultValue = "") String filter,
             @AuthenticationPrincipal User user,
             @Valid Message message,
             BindingResult bindingResult,
@@ -68,7 +65,6 @@ public class MainController {
             model.mergeAttributes(errorsMap);
             model.addAttribute("message", message);
         } else {
-
             commonService.safeFile(message, file);
 
             model.addAttribute("message", null);
@@ -76,10 +72,6 @@ public class MainController {
             iMessageRepo.save(message);
         }
 
-        Iterable<Message> messages = iMessageRepo.findAll();
-
-        model.addAttribute("messages", messages);
-
-        return "main";
+        return messageService.fillModel(page, filter, model);
     }
 }

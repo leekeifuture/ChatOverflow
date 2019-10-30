@@ -15,4 +15,5 @@
     </div>
     <#include "parts/messageEdit.ftl" />
     <#include "parts/messageList.ftl" />
+    <#include "parts/pagination.ftl" />
 </@c.page>
