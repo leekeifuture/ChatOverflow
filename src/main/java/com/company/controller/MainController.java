@@ -6,6 +6,10 @@ import com.company.repos.IMessageRepo;
 import com.company.service.CommonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,16 +41,19 @@ public class MainController {
     @GetMapping("/main")
     public String main(
             @RequestParam(required = false, defaultValue = "") String filter,
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC)
+                    Pageable pageable,
             Model model
     ) {
-        Iterable<Message> messages;
+        Page<Message> page;
 
         if (filter != null && !filter.isEmpty())
-            messages = iMessageRepo.findByTag(filter);
+            page = iMessageRepo.findByTag(filter, pageable);
         else
-            messages = iMessageRepo.findAll();
+            page = iMessageRepo.findAll(pageable);
 
-        model.addAttribute("messages", messages);
+        model.addAttribute("page", page);
+        model.addAttribute("url", "/main");
         model.addAttribute("filter", filter);
 
         return "main";

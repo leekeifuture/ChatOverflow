@@ -1,4 +1,4 @@
-CREATE sequence hibernate_sequence start 1 increment 1;
+CREATE SEQUENCE hibernate_sequence START 1 INCREMENT 1;
 
 CREATE TABLE message (
     id int8 NOT NULL,
