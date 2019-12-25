@@ -14,7 +14,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 @Service
-public class CommonService {
+public class FileService {
 
     @Value("${upload.path}")
     private String uploadPath;

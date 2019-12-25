@@ -1,4 +1,4 @@
-<#import "parts/common.ftl" as c />
+<#import "parts/base.ftl" as c />
 <@c.page>
     <h1>Main page</h1>
     <div class="form-row">

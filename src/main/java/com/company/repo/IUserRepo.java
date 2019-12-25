@@ -1,4 +1,4 @@
-package com.company.repos;
+package com.company.repo;
 
 import com.company.domain.User;
 

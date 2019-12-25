@@ -1,4 +1,4 @@
-package com.company;
+package com.company.integration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

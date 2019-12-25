@@ -2,8 +2,8 @@ package com.company.controller;
 
 import com.company.domain.Message;
 import com.company.domain.User;
-import com.company.repos.IMessageRepo;
-import com.company.service.CommonService;
+import com.company.repo.IMessageRepo;
+import com.company.service.FileService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,7 +31,7 @@ public class MainController {
     private IMessageRepo iMessageRepo;
 
     @Autowired
-    private CommonService commonService;
+    private FileService fileService;
 
     @GetMapping("/")
     public String greeting() {
@@ -76,7 +76,7 @@ public class MainController {
             model.addAttribute("message", message);
         } else {
 
-            commonService.safeFile(message, file);
+            fileService.safeFile(message, file);
 
             model.addAttribute("message", null);
 

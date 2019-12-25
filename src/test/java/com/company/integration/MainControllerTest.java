@@ -1,4 +1,4 @@
-package com.company;
+package com.company.integration;
 
 import com.company.controller.MainController;
 
@@ -38,6 +38,7 @@ public class MainControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
     @Autowired
     private MainController controller;
 

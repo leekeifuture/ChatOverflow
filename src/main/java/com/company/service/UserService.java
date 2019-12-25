@@ -2,7 +2,7 @@ package com.company.service;
 
 import com.company.domain.Role;
 import com.company.domain.User;
-import com.company.repos.IUserRepo;
+import com.company.repo.IUserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -2,8 +2,8 @@ package com.company.controller;
 
 import com.company.domain.Message;
 import com.company.domain.User;
-import com.company.repos.IMessageRepo;
-import com.company.service.CommonService;
+import com.company.repo.IMessageRepo;
+import com.company.service.FileService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -26,7 +26,7 @@ public class UserMessagesController {
     private IMessageRepo iMessageRepo;
 
     @Autowired
-    private CommonService commonService;
+    private FileService fileService;
 
     @GetMapping("/user-messages/{user}")
     public String userMessages(
@@ -67,7 +67,7 @@ public class UserMessagesController {
             if (!StringUtils.isEmpty(tag))
                 message.setTag(tag);
 
-            commonService.safeFile(message, file);
+            fileService.safeFile(message, file);
 
             iMessageRepo.save(message);
         }

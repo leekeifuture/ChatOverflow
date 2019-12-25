@@ -1,4 +1,4 @@
-<#import "parts/common.ftl" as c />
+<#import "parts/base.ftl" as c />
 <@c.page>
     <h1 class="mb-1">${username}</h1>
     <h5 style="color: red;">${message?ifExists}</h5>

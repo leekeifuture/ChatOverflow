@@ -1,4 +1,4 @@
-<#import "parts/common.ftl" as c />
+<#import "parts/base.ftl" as c />
 <@c.page>
     <h1>Edit user</h1>
     <form action="/user" method="post">
