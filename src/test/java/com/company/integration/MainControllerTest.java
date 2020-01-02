@@ -1,6 +1,6 @@
 package com.company.integration;
 
-import com.company.controller.MainController;
+import com.company.controller.MessageController;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +40,7 @@ public class MainControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private MainController controller;
+    private MessageController controller;
 
     @Test
     public void mainPageTest() throws Exception {

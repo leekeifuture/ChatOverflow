@@ -2,7 +2,7 @@
    role="button" aria-expanded="false" aria-controls="collapseExample">
     Message editor
 </a>
-<div class="collapse <#if message??>show</#if>" id="collapseExample">
+<div id="collapseExample" class="collapse <#if message??>show</#if>">
     <div class="form-group mt-3">
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">

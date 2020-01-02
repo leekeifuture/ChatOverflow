@@ -6,4 +6,4 @@ INSERT INTO message(id, text, tag, user_id) VALUES
     (3, 'third', 'my-tag', 1),
     (4, 'fourth', 'another', 1);
 
-ALTER sequence hibernate_sequence restart with 10;
+ALTER SEQUENCE hibernate_sequence restart WITH 10;

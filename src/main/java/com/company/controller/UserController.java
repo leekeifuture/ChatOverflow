@@ -106,10 +106,11 @@ public class UserController {
         model.addAttribute("userChannel", user);
         model.addAttribute("type", type);
 
-        if ("subscriptions".equals(type))
+        if ("subscriptions".equals(type)) {
             model.addAttribute("users", user.getSubscriptions());
-        else
+        } else {
             model.addAttribute("users", user.getSubscribers());
+        }
 
         return "subscriptions";
     }

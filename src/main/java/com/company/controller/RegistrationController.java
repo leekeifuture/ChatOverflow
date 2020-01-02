@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.controller.util.ControllerUtil;
 import com.company.domain.User;
 import com.company.domain.dto.CaptchaResponseDto;
 import com.company.service.UserService;
@@ -53,24 +54,27 @@ public class RegistrationController {
                 Collections.emptyList(),
                 CaptchaResponseDto.class);
 
-        if (!response.isSuccess())
+        if (!response.isSuccess()) {
             model.addAttribute("captchaError", "Fill captcha");
+        }
 
         boolean isConfirmEmpty = StringUtils.isEmpty(passwordConfirm);
 
-        if (isConfirmEmpty)
+        if (isConfirmEmpty) {
             model.addAttribute("password2Error",
                     "Password confirmation cannot be empty");
+        }
 
         if (user.getPassword() != null &&
-                !user.getPassword().equals(passwordConfirm))
+                !user.getPassword().equals(passwordConfirm)) {
             model.addAttribute("passwordError",
                     "Passwords are different!");
+        }
 
         final String template;
 
         if (isConfirmEmpty || bindingResult.hasErrors() || !response.isSuccess()) {
-            Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
+            Map<String, String> errors = ControllerUtil.getErrors(bindingResult);
 
             model.mergeAttributes(errors);
 
@@ -79,8 +83,9 @@ public class RegistrationController {
             model.addAttribute("usernameError", "User exists!");
 
             template = "registration";
-        } else
+        } else {
             template = "redirect:/login";
+        }
 
         return template;
     }
