@@ -1,6 +1,6 @@
 <#include "security.ftl" />
 <#import "pager.ftl" as p />
-<@p.pager url page />
+<@p.pager page url />
 <div id="message-list" class="card-columns">
     <#list page.content as message>
         <div class="card my-3">
@@ -39,4 +39,4 @@
         <b>No messages</b>
     </#list>
 </div>
-<@p.pager url page />
+<@p.pager page url />

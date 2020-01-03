@@ -1,3 +1,10 @@
 body {
     color: deeppink;
+    font-family: 'Proxima Soft', sans-serif;
+    font-feature-settings: "ss01", "ss02"
+}
+
+.turbolinks-progress-bar {
+    height: 2px;
+    background-color: navy;
 }

@@ -70,10 +70,13 @@ public class MessageController {
 
     @PostMapping("/main")
     public String add(
-            @AuthenticationPrincipal User user,
             @Valid Message message,
             BindingResult bindingResult,
             @RequestParam("file") MultipartFile file,
+            @RequestParam(required = false, defaultValue = "") String filter,
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC)
+                    Pageable pageable,
+            @AuthenticationPrincipal User user,
             Model model
     ) throws IOException {
         message.setAuthor(user);
@@ -91,9 +94,8 @@ public class MessageController {
             iMessageRepo.save(message);
         }
 
-        Iterable<Message> messages = iMessageRepo.findAll();
-
-        model.addAttribute("messages", messages);
+        Page<MessageDto> page = messageService.getMessageList(pageable, filter, user);
+        model.addAttribute("page", page);
 
         return "main";
     }
@@ -120,7 +122,7 @@ public class MessageController {
                 author.getSubscriptions().size());
         model.addAttribute("subscribersCount",
                 author.getSubscribers().size());
-        model.addAttribute("url", "/author-messages/" + author.getId());
+        model.addAttribute("url", "/user-messages/" + author.getId());
 
         return "userMessages";
     }
