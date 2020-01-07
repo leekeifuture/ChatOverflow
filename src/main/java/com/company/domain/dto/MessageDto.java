@@ -6,13 +6,13 @@ import com.company.domain.util.MessageHelper;
 
 public class MessageDto {
 
-    private Long id;
-    private String text;
-    private String tag;
-    private User author;
-    private String filename;
-    private Long likes;
-    private Boolean meLiked;
+    private final Long id;
+    private final String text;
+    private final String tag;
+    private final User author;
+    private final String filename;
+    private final Long likes;
+    private final Boolean meLiked;
 
     public MessageDto(Message message, Long likes, Boolean meLiked) {
         this.id = message.getId();

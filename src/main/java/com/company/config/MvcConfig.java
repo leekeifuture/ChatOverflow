@@ -26,6 +26,8 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
     }
 
+//    for appearing pages not as index
+//
 //    @Override
 //    public void addArgumentResolvers(
 //            List<HandlerMethodArgumentResolver> argumentResolvers

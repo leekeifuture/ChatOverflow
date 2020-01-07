@@ -97,7 +97,7 @@ public class MessageController {
         Page<MessageDto> page = messageService.getMessageList(pageable, filter, user);
         model.addAttribute("page", page);
 
-        return "main";
+        return "redirect:/main";
     }
 
     @GetMapping("/user-messages/{author}")

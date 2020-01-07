@@ -28,7 +28,9 @@
                 <#list body as p>
                     <#if (p - 1) == page.getNumber()>
                         <li class="page-item active">
-                            <a class="page-link" href="#">${p}</a>
+                            <a class="page-link" href="#">
+                                ${p}<span class="sr-only">(current)</span>
+                            </a>
                         </li>
                     <#elseif p == -1>
                         <li class="page-item disabled">
@@ -38,7 +40,7 @@
                         <li class="page-item">
                             <a class="page-link"
                                href="${url}?page=${p - 1}&size=${page.getSize()}">
-                                ${p}<span class="sr-only">(current)</span>
+                                ${p}
                             </a>
                         </li>
                     </#if>
