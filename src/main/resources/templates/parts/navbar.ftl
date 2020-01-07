@@ -31,7 +31,7 @@
                 </li>
             </#if>
         </ul>
-        <#if user??>
+        <#if user?? && name??>
             <form action="/logout" method="post">
                 <div class="navbar-text mr-3">${name}</div>
                 <button class="btn btn-primary" type="submit">Sign Out</button>

@@ -43,10 +43,11 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(@RequestParam("password2") String passwordConfirm,
-                          @RequestParam("g-recaptcha-response") String captchaResponse,
-                          @Valid User user,
-                          BindingResult bindingResult, Model model
+    public String addUser(
+            @RequestParam("password2") String passwordConfirm,
+            @RequestParam("g-recaptcha-response") String captchaResponse,
+            @Valid User user,
+            BindingResult bindingResult, Model model
     ) {
         String url = String.format(CAPTCHA_URL, secret, captchaResponse);
         CaptchaResponseDto response = restTemplate.postForObject(
@@ -71,18 +72,14 @@ public class RegistrationController {
                     "Passwords are different!");
         }
 
-        final String template;
+        String template = "registration";
 
         if (isConfirmEmpty || bindingResult.hasErrors() || !response.isSuccess()) {
             Map<String, String> errors = ControllerUtil.getErrors(bindingResult);
 
             model.mergeAttributes(errors);
-
-            template = "registration";
         } else if (!userService.addUser(user)) {
             model.addAttribute("usernameError", "User exists!");
-
-            template = "registration";
         } else {
             template = "redirect:/login";
         }
