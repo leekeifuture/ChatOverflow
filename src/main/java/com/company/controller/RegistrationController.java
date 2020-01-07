@@ -7,6 +7,7 @@ import com.company.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -45,7 +46,8 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String addUser(
             @RequestParam("password2") String passwordConfirm,
-            @RequestParam("g-recaptcha-response") String captchaResponse,
+            @Nullable @RequestParam("g-recaptcha-response")
+                    String captchaResponse,
             @Valid User user,
             BindingResult bindingResult, Model model
     ) {

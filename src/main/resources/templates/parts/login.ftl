@@ -55,7 +55,7 @@
                     </#if>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="col-sm-6">
                 <div class="g-recaptcha"
                      data-sitekey="6Lfacr4UAAAAANu20l2VzAB89L3_x6kkcV8vxUXN">
                 </div>
