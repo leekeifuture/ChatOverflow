@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
 body {
-    color: deeppink;
-    font-family: 'Proxima Soft', sans-serif;
-    font-feature-settings: "ss01", "ss02"
+    color: deeppink !important;
 }
 
 .turbolinks-progress-bar {
-    height: 2px;
-    background-color: navy;
+    height: 2px !important;
+    background-color: navy !important;
+}
+
+h5 {
+    color: red !important;
 }

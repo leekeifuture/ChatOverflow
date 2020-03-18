@@ -1,4 +1,4 @@
-<#import "parts/base.ftl" as c />
-<@c.page>
+<#import "parts/base.ftl" as b />
+<@b.page>
     <h5>Hello, guest</h5>
-</@c.page>
+</@b.page>

@@ -26,9 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @WithUserDetails("asf")
 @TestPropertySource("/application-test.properties")
-@Sql(value = {"/create-user-before.sql", "/messages-list-before.sql"},
+@Sql(value = {"/sql/create-user-before.sql", "/sql/messages-list-before.sql"},
         executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
-@Sql(value = {"/create-user-after.sql", "/messages-list-after.sql"},
+@Sql(value = {"/sql/create-user-after.sql", "/sql/messages-list-after.sql"},
         executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class MainControllerTest {
 

@@ -46,7 +46,7 @@ public class LoginTest {
     }
 
     @Test
-    @Sql(value = {"/create-user-before.sql"},
+    @Sql(value = {"/sql/create-user-before.sql"},
             executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     public void correctLoginTest() throws Exception {
         this.mockMvc.perform(formLogin().user("asf").password("asf"))

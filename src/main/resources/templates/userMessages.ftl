@@ -1,5 +1,5 @@
-<#import "parts/base.ftl" as c />
-<@c.page>
+<#import "parts/base.ftl" as b />
+<@b.page>
     <h3>${userChannel.username}</h3>
     <#if !isCurrentUser>
         <#if isSubscriber>
@@ -44,4 +44,4 @@
         <#include "parts/messageEdit.ftl" />
     </#if>
     <#include "parts/messageList.ftl" />
-</@c.page>
+</@b.page>

@@ -1,7 +1,7 @@
-<#import "parts/base.ftl" as c />
+<#import "parts/base.ftl" as b />
 <#import "parts/login.ftl" as l />
-<@c.page>
+<@b.page>
     <h1 class="mb-1">Registration</h1>
-    <h5 style="color: red;">${message?ifExists}</h5>
+    <h5>${message?ifExists}</h5>
     <@l.login "/registration" true />
-</@c.page>
+</@b.page>

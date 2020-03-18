@@ -5,20 +5,27 @@
         <meta charset="UTF-8" />
         <title>ChatOverflow</title>
         <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+              content="width=device-width, initial-scale=1, shrink-to-fit=no,
+              maximum-scale=1, user-scalable=no, minimal-ui">
 
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" type="text/css"
               href="/static/css/all.min.css" />
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css"
               href="/static/css/bootstrap.min.css" />
 
         <!-- Rechaptcha Script -->
-        <script src="/static/js/api.js"></script>
-        <!-- Turbolinks Script -->
-        <script src="/static/js/turbolinks.js"></script>
+        <script type="text/javascript"
+                src="/static/js/recaptcha/api.js"></script>
 
+        <!-- Turbolinks Script -->
+        <#-- TODO friendship with recapthca -->
+        <script type="text/javascript"
+                src="/static/js/turbolinks.js"></script>
+
+        <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css"
               href="/static/css/style.css" />
     </head>
@@ -28,9 +35,12 @@
         <#nested>
     </div>
     <!-- Scripts for Bootstrap (jQuery first, then Popper.js, then Bootstrap JS) -->
-    <script src="/static/js/jquery-3.4.1.slim.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="/static/js/bootstrap/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript"
+            src="/static/js/bootstrap/popper.min.js"></script>
+    <script type="text/javascript"
+            src="/static/js/bootstrap/bootstrap.min.js"></script>
     </body>
     </html>
 </#macro>

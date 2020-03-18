@@ -1,5 +1,5 @@
-<#import "parts/base.ftl" as c />
-<@c.page>
+<#import "parts/base.ftl" as b />
+<@b.page>
     <h1>List of users</h1>
     <table>
         <thead>
@@ -21,4 +21,4 @@
         </#list>
         </tbody>
     </table>
-</@c.page>
+</@b.page>

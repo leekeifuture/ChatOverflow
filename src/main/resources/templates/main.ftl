@@ -1,5 +1,5 @@
-<#import "parts/base.ftl" as c />
-<@c.page>
+<#import "parts/base.ftl" as b />
+<@b.page>
     <h1>Main page</h1>
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -15,4 +15,4 @@
     </div>
     <#include "parts/messageEdit.ftl" />
     <#include "parts/messageList.ftl" />
-</@c.page>
+</@b.page>

@@ -1,8 +1,13 @@
 ### Project files ###
-*.properties
+application.properties
+
+## JS ##
+yarn.lock
+package-lock.json
+node_modules/
 
 ### Default ignored files ###
-/workspace.xml
+workspace.xml
 
 ### Compiled class file ###
 *.class
@@ -29,7 +34,7 @@
 hs_err_pid*
 
 ### Maven wrapper ###
-/target/
+target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -46,16 +51,15 @@ hs_err_pid*
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 ### Gradle template ###
 .gradle
-build/
 
 ### Ignore Gradle GUI config ###
 gradle-app.setting
@@ -64,7 +68,10 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 ### IntelliJ ###
-/out/
+out/
+
+### VS Code ###
+.vscode/
 
 ### mpeltonen/sbt-idea plugin ###
 .idea_modules/
@@ -114,7 +121,6 @@ local.properties
 .texlipse
 
 ### Maven template ###
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -125,30 +131,29 @@ buildNumber.properties
 .mvn/timing.properties
 
 ### Web application files ###
-/web-app/WEB-INF/classes
+web-app/WEB-INF/classes
 
 ### Default HSQL database files for production mode ###
-/prodDb.*
+prodDb.*
 
 ### General HSQL database files ###
 *Db.properties
 *Db.script
 
 ### Logs ###
-/stacktrace.log
-/test/reports
-/logs
+stacktrace.log
+test/reports
+logs
 
 ### Plugin release files ###
-/*.zip
-/plugin.xml
+plugin.xml
 
 ### Older plugin install locations ###
-/plugins
-/web-app/plugins
+plugins
+web-app/plugins
 
 ### "temporary" build files ###
-/target
+target
 
 ### Other ###
 *#
@@ -158,13 +163,12 @@ buildNumber.properties
 .*.md.html
 .DS_Store
 .recommenders
-/build
-/code
+build
+code
 MANIFEST.MF
 _site/
 activemq-data
 bin
-build
 build.log
 dump.rdb
 interpolated*.xml
@@ -175,3 +179,4 @@ transaction-logs
 .flattened-pom.xml
 secrets.yml
 .gradletasknamecache
+HELP.md

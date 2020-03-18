@@ -1,6 +1,6 @@
-<#import "parts/base.ftl" as c />
+<#import "parts/base.ftl" as b />
 <#import "parts/login.ftl" as l />
-<@c.page>
+<@b.page>
     <h1 class="mb-1">Sign In</h1>
     <#if Session?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
         <div class="alert alert-danger" role="alert">
@@ -13,4 +13,4 @@
         </div>
     </#if>
     <@l.login "/login" false />
-</@c.page>
+</@b.page>

@@ -1,5 +1,5 @@
-<#import "parts/base.ftl" as c />
-<@c.page>
+<#import "parts/base.ftl" as b />
+<@b.page>
     <h3>${userChannel.username}</h3>
     <h1>${type}</h1>
     <ul class="list-group">
@@ -11,4 +11,4 @@
             </li>
         </#list>
     </ul>
-</@c.page>
+</@b.page>
