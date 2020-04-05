@@ -5,6 +5,8 @@ application.properties
 yarn.lock
 package-lock.json
 node_modules/
+.pnp/
+.pnp.js
 
 ### Default ignored files ###
 workspace.xml

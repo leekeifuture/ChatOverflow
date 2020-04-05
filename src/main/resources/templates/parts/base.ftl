@@ -10,7 +10,7 @@
 
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" type="text/css"
-              href="/static/css/all.min.css" />
+              href="/static/css/font-awesome/all.min.css" />
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css"
