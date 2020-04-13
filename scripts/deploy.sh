@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # run it from source directory "bash scripts/deploy.sh"
 
 echo 'mvn clean package'

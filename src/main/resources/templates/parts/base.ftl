@@ -4,9 +4,8 @@
     <head>
         <meta charset="UTF-8" />
         <title>ChatOverflow</title>
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no,
-              maximum-scale=1, user-scalable=no, minimal-ui">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no,
+              maximum-scale=1, user-scalable=no, minimal-ui" name="viewport">
 
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" type="text/css"
