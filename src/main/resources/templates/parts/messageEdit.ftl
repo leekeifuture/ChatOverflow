@@ -1,3 +1,8 @@
+<#--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by Vladislav Brezovsky at 2020
+  ~ Contacts: https://t.me/vb_contacts
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample"
    role="button" aria-expanded="false" aria-controls="collapseExample">
     Message editor

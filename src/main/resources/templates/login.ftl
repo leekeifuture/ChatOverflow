@@ -1,3 +1,8 @@
+<#--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by Vladislav Brezovsky at 2020
+  ~ Contacts: https://t.me/vb_contacts
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <#import "parts/base.ftl" as b />
 <#import "parts/login.ftl" as l />
 <@b.page>

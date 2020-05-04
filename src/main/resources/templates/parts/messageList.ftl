@@ -1,3 +1,8 @@
+<#--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by Vladislav Brezovsky at 2020
+  ~ Contacts: https://t.me/vb_contacts
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <#include "security.ftl" />
 <#import "pager.ftl" as p />
 <@p.pager page url />

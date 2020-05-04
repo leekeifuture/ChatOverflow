@@ -1,3 +1,8 @@
+<#--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by Vladislav Brezovsky at 2020
+  ~ Contacts: https://t.me/vb_contacts
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <#macro pager page url="" >
     <#if page.getTotalPages() gt 7>
         <#assign

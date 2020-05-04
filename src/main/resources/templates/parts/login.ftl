@@ -1,3 +1,8 @@
+<#--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by Vladislav Brezovsky at 2020
+  ~ Contacts: https://t.me/vb_contacts
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <#macro login path isRegisterForm>
     <form action="${path}" method="post">
         <div class="form-group row">

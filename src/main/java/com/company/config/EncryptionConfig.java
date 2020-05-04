@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Created by Vladislav Brezovsky at 2020
+ * Contacts: https://t.me/vb_contacts
+ ******************************************************************************/
+
 package com.company.config;
 
 import org.springframework.context.annotation.Bean;
