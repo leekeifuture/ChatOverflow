@@ -152,7 +152,6 @@ logs/
 plugin.xml
 
 ### Older plugin install locations ###
-plugins
 web-app/plugins
 
 ### Other ###
