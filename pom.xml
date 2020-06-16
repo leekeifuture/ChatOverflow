@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.company</groupId>
     <artifactId>ChatOverflow</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-    </parent>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+            <plugin>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <groupId>org.flywaydb</groupId>
+                <version>5.1.4</version>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <!-- Spring -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
+            <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <groupId>org.springframework.boot</groupId>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
+            <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.boot</groupId>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
+            <groupId>org.springframework.security</groupId>
             <scope>test</scope>
         </dependency>
 
         <!-- DataBase support -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+            <groupId>org.postgresql</groupId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
+            <groupId>org.flywaydb</groupId>
         </dependency>
 
         <!-- Security -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.boot</groupId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-jdbc</artifactId>
+            <groupId>org.springframework.session</groupId>
         </dependency>
 
         <!-- JAXB -->
         <dependency>
-            <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
+            <groupId>javax.xml.bind</groupId>
             <version>2.3.0</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-core</artifactId>
+            <groupId>com.sun.xml.bind</groupId>
             <version>2.3.0</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
+            <groupId>com.sun.xml.bind</groupId>
             <version>2.3.0</version>
         </dependency>
     </dependencies>
+    <groupId>com.company</groupId>
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>jar</packaging>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>
             UTF-8
         </project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>5.1.4</version>
-            </plugin>
-        </plugins>
-    </build>
+    <version>1.0-SNAPSHOT</version>
 </project>
